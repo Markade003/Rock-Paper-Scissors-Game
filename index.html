@@ -22,6 +22,18 @@
         }
 
         console.log(computerChoice);
+
+        let result = '';
+
+        if (computerChoice === 'Rock') {
+            result = 'Tied';
+        } else if (computerChoice === 'Paper') {
+            result = 'You Win';
+        } else if (computerChoice === 'Scissors') {
+            result = 'You loose';
+        }
+
+        alert(`You picked Rock, Computer picked ${computerChoice}, ${result}`);
     ">Rock</button>
 
     <button>Paper</button>
