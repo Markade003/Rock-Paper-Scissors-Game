@@ -10,7 +10,7 @@
     <p></p>
 
     <button onclick="
-        const pick = Math.random();
+        let pick = Math.random();
         let computerChoice = '';
 
         if (pick >= 0 && pick < 1/3) {
@@ -20,8 +20,6 @@
         } else if (pick >= 2/3 && pick < 1) {
             computerChoice = 'Scissors'
         }
-
-        console.log(computerChoice);
 
         let result = '';
 
@@ -36,7 +34,30 @@
         alert(`You picked Rock, Computer picked ${computerChoice}, ${result}`);
     ">Rock</button>
 
-    <button>Paper</button>
+    <button onclick="
+        pick = Math.random();
+        computerChoice = '';
+
+        if (pick >= 0 && pick < 1/3) {
+            computerChoice = 'Rock';
+        } else if (pick >= 1/3 && pick < 2/3) {
+            computerChoice = 'Paper';
+        } else if (pick >= 2/3 && pick < 1) {
+            computerChoice = 'Scissors'
+        }
+
+        result = '';
+
+        if (computerChoice === 'Rock') {
+            result = 'You loose';
+        } else if (computerChoice === 'Paper') {
+            result = 'Tied';
+        } else if (computerChoice === 'Scissors') {
+            result = 'You Win';
+        }
+
+        alert(`You picked Paper, Computer picked ${computerChoice}, ${result}`);
+    ">Paper</button>
 
     <button>Scissors</button>
 </body>
