@@ -7,7 +7,8 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <p></p>
+    <p>Rock Paper Scissors Game</p>
+    <p>Make a choice!</p>
 
     <button onclick="
         let pick = Math.random();
@@ -59,6 +60,29 @@
         alert(`You picked Paper, Computer picked ${computerChoice}, ${result}`);
     ">Paper</button>
 
-    <button>Scissors</button>
+    <button onclick="
+        pick = Math.random();
+        computerChoice = '';
+
+        if (pick >= 0 && pick < 1/3) {
+            computerChoice = 'Rock';
+        } else if (pick >= 1/3 && pick < 2/3) {
+            computerChoice = 'Paper';
+        } else if (pick >= 2/3 && pick < 1) {
+            computerChoice = 'Scissors'
+        }
+
+        result = '';
+
+        if (computerChoice === 'Rock') {
+            result = 'You Win';
+        } else if (computerChoice === 'Paper') {
+            result = 'You Loose';
+        } else if (computerChoice === 'Scissors') {
+            result = 'Tied';
+        }
+
+        alert(`You picked Scissors, Computer picked ${computerChoice}, ${result}`);
+    ">Scissors</button>
 </body>
 </html>
